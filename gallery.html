@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="site description goes here">
+    	<meta name="keywords" content="site, keywords, go, here">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+		<title>Hackney is Social</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+		<link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700" rel="stylesheet">
+		<!-- <link rel="stylesheet" href="css/debug.css"> -->
+	</head>
+	<body style="font-family: 'Josefin Sans', sans-serif;">
+    <section class="hero">
+      <nav class="hero-head">
+        <div class="navbar all-page-navbar">
+          <div class="navbar-brand">
+            <figure class="image manifesto-page-logo">
+							<a href="index.html">
+              	<img src="images/Logo.jpg" alt="Hackney is Social logo">
+              </a>
+            </figure>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <div class="navbar-menu navbar-end">
+            <div class="navbar-item">
+              <a href="manifesto.html">
+								<div class="box box-black center-horizontal">
+									<h1 class="title is-size-6">
+										READ THE MANIFESTO
+									</h1>
+								</div>
+							</a>
+            </div>
+
+            <div class="navbar-item">
+              <a href="directory.html">
+								<div class="box box-black center-horizontal">
+									<h1 class="title is-size-6">
+										WHO'S INVOLVED
+									</h1>
+								</div>
+							</a>
+            </div>
+
+            <div class="navbar-item">
+              <a href="gallery.html">
+								<div class="box box-black center-horizontal">
+									<h1 class="title is-size-6">
+										GALLERY
+									</h1>
+								</div>
+							</a>
+            </div>
+
+            <div class="navbar-item">
+              <a href="manifesto.html#signupform">
+								<div class="box box-black center-horizontal">
+									<h1 class="title is-size-6">
+										SIGN UP
+									</h1>
+								</div>
+							</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <section class="section">
+      <div class="container all-page-text">
+        <h2 class="title">#whoknew</h2>
+        <p class="content">
+          We asked some of our finding partners to send image in under the hastage #whoknew
+        </p>
+      </div>
+
+      <div class="container instagram-feed">
+        <div id="app">
+  				<template v-if="grams.length > 0">
+  				  <div class="block" v-for="(gram, index) in grams">
+  				    <a :href="gram.link">
+  				      <div class="textWithBlurredBg">
+  				      	<img :src="gram.images.standard_resolution.url" :title="gram.text">
+  							<div class="instagram-caption-container">
+  								<p class="instagram-caption">{{ gram.caption.text }}</p>
+  							</div>
+  				      </div>
+  				    </a>
+  				  </div>
+  				</template>
+  		    <div v-else class="loading"></div>
+  		    <div v-if="error" class="error">Sorry, the Instagrams couldn't be fetched.</div>
+  		    <button class="load-more-button box box-black" @click="getMoreGrams">
+            <h3 class="title is-size-4" style="font-family: 'Josefin Sans', sans-serif;">Load More</h3>
+          </button>
+    			</div>
+      </div>
+    </section>
+
+		<section>
+			<div class="footer-divider all-page-text">
+				<img src="images/FooterLine.png" alt="footer divider">
+			</div>
+		</section>
+
+
+    <footer class="footer">
+			<div class="container all-page-text">
+        <div class="block center-horizontal">
+					<p class="content">
+						<a href="https://www.instagram.com/hackneyissocial/">Hackney Is Social on <i class="fab fa-instagram"></i> Instagram </a>
+          </p>
+        </div>
+      </div>
+
+		</footer>
+
+  	<script src="https://unpkg.com/vue@2.5.16/dist/vue.min.js"></script>
+  	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="js/instagram-feed.js"></script>
+		<!-- Designed by Cere Mae Ebanks -->
+		<!-- Developed by Danny Michaux -->
+	</body>
+</html>

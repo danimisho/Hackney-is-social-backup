@@ -1,0 +1,407 @@
+/*
+Project Name: Blank Template
+Client: Your Client
+Author: Your Name
+*/
+
+/******************************************
+/* COLOURS
+/*******************************************/
+
+/* add a list of colours used in the project */
+
+/******************************************
+/* SENSIBLE DEFAULTS
+/*******************************************/
+
+* {
+     box-sizing: border-box;
+}
+img {
+	max-width:100%;
+}
+
+/******************************************
+/* TYPOGRAPHY
+/*******************************************/
+
+/* add type styles here */
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700');
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.site-container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.center-horizontal{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.center-vertical{
+  display: flex;
+  align-items: center;
+}
+
+.center-justified{
+  text-align: justify;
+  margin: 0 auto;
+}
+
+
+.box{
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.box:hover{
+  background-color: lightgrey;
+}
+
+.box-black{
+  border: .3rem solid black;
+}
+
+.box-blue{
+  border: .3rem solid blue;
+}
+
+.all-page-text{
+  max-width: 60%;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  padding-bottom: 2rem;
+  background-color: white;
+}
+/* navbar */
+
+.all-page-navbar{
+  max-width: 80%;
+  margin: auto;
+}
+
+.navbar-burger{
+  height: 8.25rem;
+  width: 8.25rem;
+}
+
+.navbar-burger span{
+  height:2.2px;
+  width: 21px;
+}
+
+/*  */
+
+
+/* Landing page */
+
+.landing-page-hero{
+  padding-bottom: 3rem;
+}
+
+.landing-page-hero-body{
+  padding-top: 1rem;
+}
+
+.landing-page-logo{
+  max-width: 480px;
+}
+
+.landing-page-text{
+  max-width: 480px;
+}
+
+.landing-page-menu{
+  max-width: 90%;
+  margin: auto;
+  letter-spacing: .2rem;
+  text-align: center;
+}
+/*  */
+
+/* MANIFESTO */
+
+.manifesto-page-logo{
+  max-width: 120px;
+}
+
+.manifesto-page-hero-footer{
+  max-width: 90%;
+  margin: auto;
+  letter-spacing: .2rem;
+  text-align: center;
+}
+
+.sign-up-form{
+    max-width: 60%;
+    margin: auto;
+}
+
+.input{
+  width: 360px;
+}
+
+/*  */
+
+/* directory */
+
+/*  MODAL */
+
+
+.modal{
+  animation-name:modalopen;
+  animation-duration:1s;
+}
+
+.modal-content{
+  margin: auto;
+  margin-top: 2rem;
+}
+
+@keyframes modalopen{
+  from{ opacity: 0}
+  to {opacity: 1}
+}
+/*  */
+
+/* Partners logos */
+
+.logos-flexbox{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  list-style: none;
+  margin-left: 0;
+}
+
+.partner-logos-container{
+  flex-basis: 16.66%;
+  text-align: center;
+  font-size: 15px;
+  padding: 1%;
+}
+
+/*  */
+
+/* Accordion Menu */
+
+.message-header{
+  border-radius: 0;
+  font-weight: 400;
+}
+
+.accordion-heading-text:hover{
+  background-color: #242424;
+}
+
+.accordion-heading-text{
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+.accordion-subheading-text:hover{
+  background-color: #DBDBDB!important;
+}
+
+.accordion-subheading-text{
+  font-size: 1.25rem;
+  margin-bottom: .25rem
+}
+
+.accordion-content-text{
+  padding:1.5rem;
+}
+
+/* Typeform */
+
+.typeform-widget{
+  margin-top: 10px;
+}
+
+/* Insta feed */
+
+.instagram-feed{
+  width: 90%
+}
+
+:root{
+  --spacing: 1rem;
+  --speed: 1700ms;
+  }
+
+body{
+  margin: 0;
+  padding: var(--spacing);
+  color: var(--color);
+  background: var(--background);
+}
+#app{
+  display: grid;
+  grid-gap: var(--spacing);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  min-height: calc(100vh - var(--spacing)*2);
+}
+
+.load-more-button{
+  border-radius: 0;
+  grid-column: 1 / -1;
+  align-self: end;
+}
+
+.error{
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+.loading{
+  width: calc(var(--spacing)*3);
+  height: calc(var(--spacing)*3);
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: center;
+  background: var(--color);
+  animation: load var(--speed) infinite ease-in-out;
+  transform: rotate(0);
+}
+@keyframes load{
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.textWithBlurredBg{
+  display:inline-block;
+  position:relative;
+  transition:.3s;
+  font-size: 1.2rem;
+}
+
+.textWithBlurredBg img{
+  width:100%;
+  height:100%;
+  transition:.3s;
+}
+
+.textWithBlurredBg:hover img{
+  filter:blur(2px) brightness(50%);
+}
+
+.textWithBlurredBg > :not(img){
+  position:absolute;
+  z-index:1;
+  top:15%;
+  width:100%;
+  text-align:center;
+  color:#fff;
+  opacity:0;
+  transition:.3s;
+}
+
+.textWithBlurredBg:hover :not(img){
+  opacity:1;
+}
+
+.instagram-caption{
+  line-height: 1.2;
+  width: 90%;
+  margin: auto;
+  overflow-wrap: break-word;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.textWithBlurredBg .instagram-likes-symbol{
+  top: 89.5%;
+  right:20%;
+}
+
+.textWithBlurredBg .instagram-likes-number{
+  top: 90%;
+  right:12%;
+}
+
+.textWithBlurredBg .instagram-comments-symbol{
+  top: 89.5%;
+  left:12%;
+}
+
+.textWithBlurredBg .instagram-comments-number{
+  top: 90%;
+  left:20%;
+}
+
+/*  */
+
+/******************************************
+/* HELPER CLASSES
+/*******************************************/
+
+/* Clearfix */
+.clearfix:before,
+.clearfix:after {
+     content: " ";
+     display: table;
+}
+.clearfix:after {
+     clear:both;
+}
+
+.is-hidden {
+     display: none;
+}
+.is-visible {
+     display: block;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+@media all and (max-width: 1023px) {
+
+  .navbar{
+    max-width: 80%;
+  }
+
+  .all-page-text{
+    max-width: 80%;
+  }
+
+  .sign-up-form{
+      max-width: 80%;
+      margin: auto;
+      margin-bottom: 1rem;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .landing-page-logo{
+    max-width: 240px;
+  }
+
+  .navbar{
+    max-width: 100%;
+  }
+
+  .all-page-text{
+    max-width: 95%;
+  }
+
+  .sign-up-form{
+      max-width: 95%;
+      margin: auto;
+      margin-bottom: 1rem;
+  }
+}
